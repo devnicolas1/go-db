@@ -16,7 +16,7 @@ func main() {
 
 	for scanner.Scan() {
 		input := scanner.Text()
-		if strings.ToLower(input) == "exit" {
+		if strings.ToUpper(input) == "EXIT" {
 			break
 		}
 
