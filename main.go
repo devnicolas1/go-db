@@ -24,6 +24,13 @@ func main() {
 		if len(parts) > 0 {
 			command := strings.ToUpper(parts[0])
 			switch command {
+			case "HELP":
+				fmt.Println("Commands:")
+				fmt.Println("  ALL: Display all entries in the database")
+				fmt.Println("  GET <key>: Get the value of a key")
+				fmt.Println("  CREATE <key> <value>: Create a new entry in the database")
+				fmt.Println("  DELETE <key>: Delete an entry from the database")
+				fmt.Println("  EXIT: Exit the program")
 			case "ALL":
 				operations.All(database)
 			case "GET":
