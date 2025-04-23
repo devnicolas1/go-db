@@ -1,13 +1,16 @@
 package operations
 
-import "fmt"
+import (
+	"fmt"
+	"go-db/types"
+)
 
-func All(database map[string]string) {
-	if len(database) == 0 {
+func All(currentLevel *types.Level) {
+	if len(currentLevel.GetAllCombined()) == 0 {
 		fmt.Println("Database is empty")
 	} else {
 		fmt.Println("Database contents:")
-		for key, value := range database {
+		for key, value := range currentLevel.GetAllCombined() {
 			fmt.Printf("  %s = %s\n", key, value)
 		}
 	}

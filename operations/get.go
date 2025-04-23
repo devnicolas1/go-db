@@ -1,11 +1,14 @@
 package operations
 
-import "fmt"
+import (
+	"fmt"
+	"go-db/types"
+)
 
-func Get(database map[string]string, parts []string) {
+func Get(currentLevel *types.Level, parts []string) {
 	if len(parts) >= 2 {
 		key := parts[1]
-		value, ok := database[key]
+		value, ok := currentLevel.Get(key)
 		if !ok {
 			fmt.Printf("Key '%s' not found in database\n", key)
 		} else {

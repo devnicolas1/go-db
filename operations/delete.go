@@ -1,14 +1,17 @@
 package operations
 
-import "fmt"
+import (
+	"fmt"
+	"go-db/types"
+)
 
-func Delete(database map[string]string, parts []string) {
+func Delete(currentLevel *types.Level, parts []string) {
 	if len(parts) >= 2 {
 		key := parts[1]
-		if _, ok := database[key]; !ok {
+		if _, ok := currentLevel.Get(key); !ok {
 			fmt.Printf("Key '%s' not found in database\n", key)
 		} else {
-			delete(database, key)
+			delete(currentLevel.Changes, key)
 			fmt.Printf("Deleted entry: %s\n", key)
 		}
 	} else {
