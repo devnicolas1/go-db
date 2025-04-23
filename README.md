@@ -1,6 +1,6 @@
-# An in-memory key-value database made with Go
+# An in-memory Key-Value database made with Go
 
-An in-memory key-value database made with Go, for no particular reason other than to learn basic things about the
+An in-memory Key-Value database made with Go, for no particular reason other than to learn basic things about the
 language (really I just thought it would be fun, and it actually was).
 
 ## Usage
